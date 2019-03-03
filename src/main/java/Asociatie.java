@@ -1,14 +1,13 @@
 import java.awt.print.Book;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class Asociatie{
+public class Asociatie implements Serializable {
 
+    private static final long serialVersionUID = -4140719744954107494L;
     private List<Apartament> apartamentList;
 
     Asociatie(List<Apartament> apartamentList) {
@@ -59,10 +58,10 @@ public class Asociatie{
 
     }
 
-   public void save(){
+   public void saveFile(){
 
         try{
-            FileOutputStream file = new FileOutputStream("/Users/cristi/Desktop/produse.txt");
+            FileOutputStream file = new FileOutputStream("asociatie.txt");
             ObjectOutputStream out = new ObjectOutputStream(file);
 
             out.writeObject(this);
@@ -75,6 +74,28 @@ public class Asociatie{
 
             System.out.println("IOException is caught");
         }
+    }
+
+    public static Asociatie  loadFile(){
+
+        Asociatie aso=null;
+
+        try{
+            FileInputStream file = new FileInputStream("asociatie.txt");
+            ObjectInputStream in = new ObjectInputStream(file);
+
+            aso = (Asociatie) in.readObject();
+
+            in.close();
+            file.close();
+        }
+
+        catch (Exception ex){
+
+            System.out.println("IOException is caught");
+            System.out.println(ex.getMessage());
+        }
+        return aso;
     }
 
 }

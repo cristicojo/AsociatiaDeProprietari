@@ -1,8 +1,11 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class Apartament implements Comparable<Apartament> {
+public class Apartament implements Comparable<Apartament>, Serializable {
+
+    private static final long serialVersionUID = -3183842531880850175L;
 
     public int compareTo(Apartament o) {
         return this.nrapartament - o.nrapartament;

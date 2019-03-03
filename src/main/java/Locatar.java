@@ -1,7 +1,10 @@
+import java.io.Serializable;
 import java.util.Comparator;
 
-public class Locatar {
+public class Locatar implements Serializable {
 
+
+    private static final long serialVersionUID = 789712415124214001L;
 
     public static class ComparatorbyName implements Comparator<Locatar> {
 
