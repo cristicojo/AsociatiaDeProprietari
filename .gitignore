@@ -1,11 +1,5 @@
-
 .idea/
 AsociatieDeProprietari.iml
-.DS_Store
-
 target/
 
-
-
-
-
+*.DS_Store

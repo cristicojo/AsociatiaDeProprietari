@@ -21,19 +21,14 @@ public class Asociatie implements Serializable {
         List<Locatar> loc = new ArrayList<Locatar>();
 
 
-
         for (int i = 0; i < apartamentList.size(); i++)
             loc.addAll(apartamentList.get(i).getLocatarList());
 
-
-            Collections.sort(loc, x);
-
+        Collections.sort(loc, x);
 
 
         return loc;
     }
-
-
 
 
     public void registerLocatarToApartament(Locatar l, Apartament ap) {
@@ -58,9 +53,9 @@ public class Asociatie implements Serializable {
 
     }
 
-   public void saveFile(){
+    public void saveFile() {
 
-        try{
+        try {
             FileOutputStream file = new FileOutputStream("asociatie.txt");
             ObjectOutputStream out = new ObjectOutputStream(file);
 
@@ -68,19 +63,17 @@ public class Asociatie implements Serializable {
 
             out.close();
             file.close();
-        }
-
-        catch (IOException ex){
+        } catch (IOException ex) {
 
             System.out.println("IOException is caught");
         }
     }
 
-    public static Asociatie loadFile(){
+    public static Asociatie loadFile() {
 
-        Asociatie aso=null;
+        Asociatie aso = null;
 
-        try{
+        try {
             FileInputStream file = new FileInputStream("asociatie.txt");
             ObjectInputStream in = new ObjectInputStream(file);
 
@@ -88,9 +81,7 @@ public class Asociatie implements Serializable {
 
             in.close();
             file.close();
-        }
-
-        catch (Exception ex){
+        } catch (Exception ex) {
 
             System.out.println("IOException is caught");
             System.out.println(ex.getMessage());
