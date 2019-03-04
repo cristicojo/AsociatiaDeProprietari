@@ -76,7 +76,7 @@ public class Asociatie implements Serializable {
         }
     }
 
-    public static Asociatie  loadFile(){
+    public static Asociatie loadFile(){
 
         Asociatie aso=null;
 
