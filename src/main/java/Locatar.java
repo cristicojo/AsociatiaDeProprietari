@@ -25,24 +25,21 @@ public class Locatar implements Serializable {
     }
 
 
-
-
-
     private String name;
     private Apartament ap;
 
-    Locatar(String name,Apartament ap){
+    Locatar(String name, Apartament ap) {
 
-        this.name=name;
-        this.ap=ap;
+        this.name = name;
+        this.ap = ap;
 
     }
 
 
     @Override
-    public String toString(){
+    public String toString() {
 
-        return "Locatar: "+name;
+        return "Locatar: " + name;
     }
 
 

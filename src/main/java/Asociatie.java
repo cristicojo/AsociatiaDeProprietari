@@ -1,4 +1,3 @@
-import java.awt.print.Book;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -83,7 +82,7 @@ public class Asociatie implements Serializable {
             file.close();
         } catch (Exception ex) {
 
-            System.out.println("IOException is caught");
+            System.out.println("Exception is caught");
             System.out.println(ex.getMessage());
         }
         return aso;

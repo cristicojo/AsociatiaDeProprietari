@@ -1,6 +1,5 @@
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class Apartament implements Comparable<Apartament>, Serializable {
@@ -10,7 +9,6 @@ public class Apartament implements Comparable<Apartament>, Serializable {
     public int compareTo(Apartament o) {
         return this.nrapartament - o.nrapartament;
     }
-
 
 
     private int nrcamere;
@@ -41,22 +39,18 @@ public class Apartament implements Comparable<Apartament>, Serializable {
 
     }
 
-    public List<Locatar> getLocatarList(){
+    public List<Locatar> getLocatarList() {
         return locatarList;
-    }
 
-    public int getNrapartament(){
-        return nrapartament;
     }
 
 
     @Override
     public String toString() {
 
-        return "Apartament: "+locatarList+ " Numarul de camere: " + nrcamere + " Nr de apartament: " + nrapartament+"\n";
+        return "Apartament: " + locatarList + " Numarul de camere: " + nrcamere + " Nr. de apartament: " + nrapartament + "\n";
 
     }
-
 
 
 }
